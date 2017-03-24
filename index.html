@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vuejs_day3</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<style>
+	.fade-enter-active, .fade-leave-active {
+	  transition: opacity .5s
+	}
+	.fade-enter, .fade-leave-active {
+	  opacity: 0
+	}
+	/* 可以设置不同的进入和离开动画 */
+	/* 设置持续时间和动画函数 */
+	.slide-fade-enter-active {
+	  transition: all .3s ease;
+	}
+	.slide-fade-leave-active {
+	  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+	}
+	.slide-fade-enter, .slide-fade-leave-active {
+	  transform: translateX(10px);
+	  opacity: 0;
+	}
+	.bounce-enter-active {
+	  animation: bounce-in .5s;
+	}
+	.bounce-leave-active {
+	  animation: bounce-out .5s;
+	}
+	@keyframes bounce-in {
+	  0% {
+	    transform: scale(0);
+	  }
+	  50% {
+	    transform: scale(1.5);
+	  }
+	  100% {
+	    transform: scale(1);
+	  }
+	}
+	@keyframes bounce-out {
+	  0% {
+	    transform: scale(1);
+	  }
+	  50% {
+	    transform: scale(1.5);
+	  }
+	  100% {
+	    transform: scale(0);
+	  }
+	}
+</style>
+<body>
+	<div id="app">
+		<button @click="bool = !bool">toggle</button>
+		<transition name="bounce">
+			<p v-if="bool">你看不见我！</p>
+		</transition>
+	</div>
+</body>
+<script type="text/javascript">
+	var app = new Vue
+	(
+		{
+			el: '#app',
+			data:
+			{
+				bool: true
+			} 
+		}
+	);
+</script>
+</html>
