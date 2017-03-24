@@ -1,0 +1,8 @@
+title: Leizixing.GitHub.io
+description: My home page
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-midnight
+
+gems:
+  - jekyll-mentions
